@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRO</title>
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleregistro.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body{
+            backgroud-color: #9E9E9E;
+        }
+        .botoncentrado{
+        display: flex;
+        justify-content: center;
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-2 bg-blue" id="navbar" style="FFFFFF">
+        <div class="container">
+            <a href="#" class="navbar-brand" style="color:blue;font-family:'Cherry Cream Soda';" >TU TIQUETERA EN LINEA</a>
+            <button type="button" class="navbar-toggler" data-bs-target="#navbarNav " data-bs-toggle="collapse" aria-controls="navbarNav" aria-expanded="false" aria-lable="Toggle Navbar">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <strong>   <a class="nav-item nav-link" STYLE="color:black;font-family:'Chivo Mono',monospace;" href="{% url 'inicio' %}">INICIO</a> </strong>
+                    </li>
+                    <li class="nav-item">
+                       <strong>  <a class="nav-item nav-link"STYLE="color:black;font-family:'Chivo Mono',monospace;" href="#">REGISTRO</a> </strong>
+                    </li>
+                    <li class="nav-item">
+                      <strong>   <a class="nav-item nav-link"STYLE="color:black;font-family:'Chivo Mono',monospace;" href="{% url 'gestionusuarios'%}">GESTION DE USUARIOS</a> </strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <form method="post">
+      {%csrf_token %}
+    <div class="form-group">
+        {{form.nombre_completo.label_tag}}
+        {{form.nombre_completo}}
+    </div>
+    <div class="form-group">
+        {{form.identificacion.label_tag}}
+        {{form.identificacion}}
+    </div>
+   <div class="form-group">
+        {{form.celular.label_tag}}
+        {{form.celular}}
+    </div>
+     <div class="form-group">
+        {{form.correo_electronico.label_tag}}
+        {{form.correo_electronico}}
+    </div>
+    <div class="form-group">
+        {{form.nombre_evento.label_tag}}
+        {{form.nombre_evento}}
+    </div>
+    <div class="form-group">
+        {{form.tipo_boleto.label_tag}}
+        {{form.tipo_boleto}}
+    </div>
+<div style="text-align: center;">
+    <button  type="submit" class="btn btn-outline-primary" style="">REGISTRARSE/ACTUALIZAR</button>
+</div>
+  </form>
+</div>
+
+<br>
+<br>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
